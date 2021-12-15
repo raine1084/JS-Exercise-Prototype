@@ -42,8 +42,13 @@ Airplane.prototype.land = function () {
 function Person(name, age) {
   this.name = name;
   this.age= age;
-}
+  this.stomach = empty;
+  this.eat= someFood;
+  }
+  
+  const person= new Person('LaVonda', 37)
 
+console.log(person);
 
 
 
@@ -94,9 +99,23 @@ if(dist <= driveableMiles){
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age) {
+ Person.call(this, age, name);
+ this.favoriteToy= favoriteToy;
  
 }
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play= function(favoriteToy){
+  return `Playing with ${this.favoriteToy}`;
+}
+const aamirah = new Person({
+  name: 'Aamirah',
+  age: 1,
+  favoriteToy: 'Teddy bear',
+
+});
+console.log(aamirah.play);
 
 
 /* 

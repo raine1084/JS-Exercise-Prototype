@@ -107,11 +107,20 @@ if(dist <= driveableMiles){
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby(name, age) {
- 
+function Baby(attributes) {
+ Person.call(this, attributes);
+ this.favoriteToy= attributes.favoriteToy;
  
 }
-
+Baby.prototype= Object.create(Person.prototype);
+Baby.prototype.play= function(){
+  return `Playing with ${favoriteToy}`;
+}
+const aamirah = new Person({
+  name: 'Aamirah',
+  age: 1,
+  favoriteToy: 'Teddy bear',
+});
 
 /* 
   TASK 4

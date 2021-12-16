@@ -40,17 +40,25 @@ Airplane.prototype.land = function () {
 */
 
 function Person(name, age) {
-  this.name = name;
+  this.name= name;
   this.age= age;
-  this.stomach = empty;
-  this.eat= someFood;
-  }
+  this.stomach= 0;
+
+}
+Person.prototype.eat= function(){
+
+}
+Person.prototype.poop = function(){
   
-  const person= new Person('LaVonda', 37)
-
-console.log(person);
-
-
+}
+Person.prototype.toString = function(){
+  return `${this.name} is ${this.age}`
+}
+const laVonda = new Person({
+  name: 'LaVonda',
+  age: 37,
+})
+  
 
 
 
@@ -100,30 +108,17 @@ if(dist <= driveableMiles){
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age) {
- Person.call(this, age, name);
- this.favoriteToy= favoriteToy;
+ 
  
 }
-Baby.prototype = Object.create(Person.prototype);
-
-Baby.prototype.play= function(favoriteToy){
-  return `Playing with ${this.favoriteToy}`;
-}
-const aamirah = new Person({
-  name: 'Aamirah',
-  age: 1,
-  favoriteToy: 'Teddy bear',
-
-});
-console.log(aamirah.play);
 
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
+  1. window binding: is used when none of the other rules apply. In that case this is defaulted to the window
+  2. implicit binding: this is what is to the left of the dot
+  3. explicit binding: 
   4. 
 */
 
